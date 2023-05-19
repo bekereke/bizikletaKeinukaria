@@ -1,12 +1,5 @@
 function argiGorriaDirDir () {
     basic.showLeds(`
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        # # # # #
-        `)
-    basic.showLeds(`
         . . . . .
         . # # # .
         . # # # .
@@ -14,11 +7,11 @@ function argiGorriaDirDir () {
         . . . . .
         `)
     basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . # . .
-        . . . . .
-        . . . . .
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
         `)
 }
 input.onButtonPressed(Button.A, function () {
@@ -78,5 +71,7 @@ basic.forever(function () {
     inklinazioa = Math.abs(input.rotation(Rotation.Roll))
     while (inklinazioa >= -30 && inklinazioa <= 30) {
         argiGorriaDirDir()
+        // 103º da maximoa eskuinetara. -103º maximoa ezkerretara.
+        inklinazioa = Math.abs(input.rotation(Rotation.Roll))
     }
 })
