@@ -72,6 +72,7 @@ let inklinazioa = 0
 inklinazioa = 0
 music.setVolume(127)
 led.setBrightness(255)
+input.setAccelerometerRange(AcceleratorRange.OneG)
 basic.forever(function () {
     // 103º da maximoa eskuinetara. -103º maximoa ezkerretara.
     inklinazioa = Math.abs(input.rotation(Rotation.Roll))
